@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Arquitectura de la Plataforma Móvil",
+    "output": "mobile-platform-architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      { "id": "main-flow", "label": "Flujo principal", "focus": ["mobile", "keycloak", "api", "postgres", "mongo"], "note": "Autenticación y acceso a datos desde el cliente móvil." },
+      { "id": "external-maps", "label": "Mapas", "focus": ["mobile", "api", "maps"], "note": "El cliente consume visualización y servicios de mapas." },
+      { "id": "dev-environment", "label": "Entorno de desarrollo", "focus": ["docker", "compose", "git", "github"], "note": "Contenedores y control de versiones para el equipo." }
+    ],
+    "viewBox": [1280, 620]
+  },
+  "components": [
+    { "id": "mobile", "type": "frontend", "label": "Flutter Mobile App", "sublabel": "Cliente iOS / Android", "tag": "Mobile client", "pos": [70, 250], "size": [180, 80] },
+    { "id": "keycloak", "type": "security", "label": "Keycloak", "sublabel": "OAuth 2.0 / OpenID Connect", "tag": "Authentication", "pos": [370, 60], "size": [190, 80] },
+    { "id": "api", "type": "backend", "label": "FastAPI REST API", "sublabel": "HTTPS · JSON REST", "tag": "API layer", "pos": [680, 250], "size": [190, 80] },
+    { "id": "postgres", "type": "database", "label": "PostgreSQL", "sublabel": "Datos relacionales", "tag": "Data layer", "pos": [1010, 140], "size": [180, 76] },
+    { "id": "mongo", "type": "database", "label": "MongoDB", "sublabel": "Documentos", "tag": "Data layer", "pos": [1010, 340], "size": [180, 76] },
+    { "id": "maps", "type": "external", "label": "Leaflet / Maps Service", "sublabel": "Map tiles & geodata", "tag": "External service", "pos": [370, 380], "size": [190, 80] },
+    { "id": "docker", "type": "cloud", "label": "Docker", "sublabel": "Contenedores locales", "tag": "Development", "pos": [80, 530], "size": [150, 68] },
+    { "id": "compose", "type": "cloud", "label": "Docker Compose", "sublabel": "Orquestación local", "tag": "Development", "pos": [310, 530], "size": [170, 68] },
+    { "id": "git", "type": "external", "label": "Git", "sublabel": "Control de versiones", "tag": "Source control", "pos": [760, 530], "size": [140, 68] },
+    { "id": "github", "type": "external", "label": "GitHub", "sublabel": "Repositorio remoto", "tag": "Source control", "pos": [1030, 530], "size": [160, 68] }
+  ],
+  "boundaries": [
+    { "kind": "security-group", "label": "Límite de confianza: Identidad", "wraps": ["keycloak"], "pad": 34 },
+    { "kind": "security-group", "label": "Límite de confianza: Backend y datos", "wraps": ["api", "postgres", "mongo"], "pad": 42 },
+    { "kind": "region", "label": "Entorno de desarrollo", "wraps": ["docker", "compose", "git", "github"], "pad": 30 }
+  ],
+  "connections": [
+    { "id": "mobile-auth", "from": "mobile", "to": "keycloak", "label": "OIDC login · tokens", "variant": "security" },
+    { "id": "mobile-api", "from": "mobile", "to": "api", "label": "HTTPS REST · Bearer JWT", "variant": "emphasis", "labelAt": [440, 360] },
+    { "id": "api-keycloak", "from": "api", "to": "keycloak", "label": "JWKS / token validation", "variant": "security" },
+    { "id": "api-postgres", "from": "api", "to": "postgres", "label": "SQL", "variant": "default" },
+    { "id": "api-mongo", "from": "api", "to": "mongo", "label": "Document queries", "variant": "default" },
+    { "id": "mobile-maps", "from": "mobile", "to": "maps", "label": "Map rendering & tiles", "variant": "dashed", "fromSide": "bottom", "toSide": "left", "via": [[160, 360], [320, 360], [320, 420]], "labelAt": [240, 375] },
+    { "id": "compose-docker", "from": "compose", "to": "docker", "label": "defines services", "variant": "dashed", "labelAt": [270, 612] },
+    { "id": "docker-api", "from": "docker", "to": "api", "label": "runs locally", "variant": "dashed", "fromSide": "top", "toSide": "bottom", "via": [[155, 490], [620, 490], [620, 350], [775, 350]], "labelAt": [470, 505] },
+    { "id": "git-github", "from": "git", "to": "github", "label": "push / pull", "variant": "dashed" },
+    { "id": "git-compose", "from": "git", "to": "compose", "label": "versioned configuration", "variant": "dashed" }
+  ],
+  "cards": []
+}
