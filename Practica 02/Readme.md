@@ -66,7 +66,7 @@ La arquitectura separa claramente:
 Imagen del diagrama:
 ![Diagrama de arquitectura](./mobile-platform-architecture.visual-check.2048x1320.light.png)
 
-[Ver diagrama interactivo en GitHub Pages](https://Edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2002/mobile-platform-architecture.html)
+[Ver diagrama interactivo en GitHub Pages](https://edwinhdzcm.github.io/Practicas_Integradora_230425/)
 
 ## Resultado esperado
 
