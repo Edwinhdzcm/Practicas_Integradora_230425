@@ -61,11 +61,11 @@ El diagrama de Archify representa los nueve bloques y algunas de sus relaciones.
 
 Para abrirlo localmente, abre `index.html` en un navegador. Para consultar el diagrama generado por Archify, abre `whatsapp-bmc.html`.
 
-Cuando el repositorio esté publicado en GitHub Pages desde la rama y carpeta configuradas, agrega o reemplaza los marcadores de esta línea por el usuario y el nombre reales del repositorio:
+Cuando GitHub Pages esté habilitado para este repositorio, puedes visualizar la práctica aquí:
 
-```markdown
-[Ver modelo interactivo en GitHub Pages]( https://edwinhdzcm.github.io/Practicas_Integradora_230425/)
-```
+- [Ver modelo interactivo en GitHub Pages](https://edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2003/)
+- [Ver diagrama de Archify en GitHub Pages](https://edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2003/whatsapp-bmc.html)
+
 
 ## Buenas prácticas
 
