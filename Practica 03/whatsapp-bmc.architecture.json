@@ -1,0 +1,161 @@
+{
+    "schema_version":  1,
+    "diagram_type":  "architecture",
+    "meta":  {
+                 "title":  "WhatsApp | Business Model Canvas",
+                 "output":  "whatsapp-bmc.html",
+                 "quality_profile":  "showcase",
+                 "viewBox":  [
+                                 1620,
+                                 870
+                             ]
+             },
+    "components":  [
+                       {
+                           "id":  "partners",
+                           "type":  "external",
+                           "label":  "Socios clave",
+                           "pos":  [
+                                       38.25,
+                                       65
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "activities",
+                           "type":  "backend",
+                           "label":  "Actividades clave",
+                           "pos":  [
+                                       352.75,
+                                       65
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "resources",
+                           "type":  "database",
+                           "label":  "Recursos clave",
+                           "pos":  [
+                                       352.75,
+                                       330
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "value",
+                           "type":  "backend",
+                           "label":  "Propuesta de valor",
+                           "pos":  [
+                                       667.25,
+                                       65
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "relationships",
+                           "type":  "security",
+                           "label":  "Relación con clientes",
+                           "pos":  [
+                                       981.75,
+                                       65
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "channels",
+                           "type":  "cloud",
+                           "label":  "Canales",
+                           "pos":  [
+                                       981.75,
+                                       330
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "segments",
+                           "type":  "external",
+                           "label":  "Segmentos de clientes",
+                           "pos":  [
+                                       1296.25,
+                                       65
+                                   ],
+                           "size":  [
+                                        272,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "costs",
+                           "type":  "backend",
+                           "label":  "Estructura de costos",
+                           "pos":  [
+                                       38.25,
+                                       595
+                                   ],
+                           "size":  [
+                                        722.5,
+                                        210
+                                    ]
+                       },
+                       {
+                           "id":  "revenue",
+                           "type":  "database",
+                           "label":  "Fuentes de ingresos",
+                           "pos":  [
+                                       854.25,
+                                       595
+                                   ],
+                           "size":  [
+                                        722.5,
+                                        210
+                                    ]
+                       }
+                   ],
+    "connections":  [
+                        {
+                            "id":  "activities-resources",
+                            "from":  "activities",
+                            "to":  "resources"
+                        },
+                        {
+                            "id":  "value-relationships",
+                            "from":  "value",
+                            "to":  "relationships"
+                        },
+                        {
+                            "id":  "relationships-channels",
+                            "from":  "relationships",
+                            "to":  "channels"
+                        },
+                        {
+                            "id":  "relationships-segments",
+                            "from":  "relationships",
+                            "to":  "segments"
+                        },
+                        {
+                            "id":  "segments-revenue",
+                            "from":  "segments",
+                            "to":  "revenue",
+                            "fromSide":  "bottom",
+                            "toSide":  "top"
+                        }
+                    ]
+}
