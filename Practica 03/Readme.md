@@ -64,7 +64,7 @@ Para abrirlo localmente, abre `index.html` en un navegador. Para consultar el di
 Cuando el repositorio esté publicado en GitHub Pages desde la rama y carpeta configuradas, agrega o reemplaza los marcadores de esta línea por el usuario y el nombre reales del repositorio:
 
 ```markdown
-[Ver modelo interactivo en GitHub Pages](https://<usuario>.github.io/<repositorio>/Practica%2003/)
+[Ver modelo interactivo en GitHub Pages]( https://edwinhdzcm.github.io/Practicas_Integradora_230425/)
 ```
 
 ## Buenas prácticas
