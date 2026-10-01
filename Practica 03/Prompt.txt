@@ -1,0 +1,7 @@
+```text
+Con Archify, crea un diagrama en español titulado "WhatsApp | Business Model Canvas" con los nueve bloques del Business Model Canvas claramente identificados: socios clave, actividades clave, recursos clave, propuesta de valor, relación con clientes, canales, segmentos de clientes, estructura de costos y fuentes de ingresos.
+
+Considera WhatsApp personal, WhatsApp Business y WhatsApp Business Platform. Distingue usuarios personales, pequeños negocios, empresas, anunciantes, creadores y audiencias cuando corresponda. Representa relaciones directas entre los bloques, en especial entre propuesta de valor, relación con clientes, canales, segmentos e ingresos. Mantén el texto breve y legible.
+
+No inventes precios, comisiones ni disponibilidad regional. Distingue el servicio personal estándar de los productos y funciones comerciales. Si una tarifa o función depende del mercado o de su despliegue, indícalo como variable y no como un dato universal. Genera una representación editable y revisable.
+```

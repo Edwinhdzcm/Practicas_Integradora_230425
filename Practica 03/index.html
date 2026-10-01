@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Business Model Canvas de WhatsApp con detalle por bloque.">
+  <title>WhatsApp | Business Model Canvas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">META · MODELO DE NEGOCIO</p><h1>WhatsApp <span>Business Model Canvas</span></h1></div>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar tema">Tema oscuro</button>
+  </header>
+  <main>
+    <p class="intro">Selecciona un bloque para consultar sus cinco elementos. El servicio personal estándar es gratuito; los ingresos se concentran en productos empresariales y descubrimiento.</p>
+    <section id="canvas" class="canvas" aria-label="Lienzo Business Model Canvas"></section>
+    <p class="note"><strong>Nota:</strong> los precios, la disponibilidad regional y el reparto de suscripciones pueden variar. No se atribuyen tarifas ni comisiones que no estén confirmadas públicamente.</p>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="detail-title">
+    <form method="dialog"><button class="close" aria-label="Cerrar detalle">×</button></form>
+    <p class="eyebrow">DETALLE DEL BLOQUE</p><h2 id="detail-title"></h2><ol id="detail-items"></ol>
+  </dialog>
+  <footer>WhatsApp · Business Model Canvas · fuentes públicas de Meta y tiendas de aplicaciones</footer>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
