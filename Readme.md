@@ -1,28 +1,8 @@
-# <p align="center">Repositorio de Practicas 10° A Integradora</p>
+# Diagrama de secuencia de pantallas de WhatsApp (administrador y miembro)
 
-<p align="center">
-  <strong>Integradora</strong><br>
-<em>"Integrando conocimientos, herramientas y buenas prácticas para construir soluciones de software reales."</em>
-</p>
+Diagrama interactivo de la secuencia de pantallas para los roles de administrador y miembro.
+Explora en el navegador los pasos y las interacciones representados en el ejercicio.
 
-## Descripción
+Página publicada: https://edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2006/
 
-Este repositorio contiene las prácticas desarrolladas durante la materia de **Integradora**, correspondiente a la carrera de Ingeniería en Desarrollo y Gestión de Software.
-
-## Información de la materia
-
-| Campo | Detalle |
-|:--|:--|
-| **Materia** | Integradora |
-| **Carrera** | Ingeniería en Desarrollo y Gestión de Software |
-| **Docente** | M.T.I. Marco A. Ramírez Hernández |
-| **Periodo** | Septiembre - Diciembre |
-
-
-
-| # | Nombre de la práctica | Descripción | Firmas | Estatus |
-|---|------------------------|--------------|--------|---------|
-| 01  | Metodologia de Evaluacion de la Materia | Revisión de la forma en que se evaluará la materia durante el cuatrimestre. |     05      | Completada ✅ |
-| 02|[Práctica02 - Boceto de Arquitectura con Archify](/Practica%2002/Readme.md) | Instalación y configuración de Archify (agente de modelado arquitectónico) con interacción con Codex de OpenAI. Se generó un diagrama de arquitectura interactivo en HTML del sistema, incluyendo capa móvil, autenticación, API, datos, servicios externos e infraestructura de desarrollo. | 24 | Completada ✅ |
-|03|[Practica03 - Boceto de Modelo Canvas con Archify](/Practica%2003/Readme.md)|El estudiantes realizara un prompt para solicitar el modelo bussiness canvas para una herramienta multiplataforma que exista o use en su vida cotidianda.|10|Completada ✅ |
-
+Ejercicio académico, no afiliado a WhatsApp
