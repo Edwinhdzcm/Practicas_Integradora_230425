@@ -73,7 +73,7 @@ No se requieren paquetes ni servicios externos para abrir la página localmente.
 
 Para consultar la práctica localmente, abre `index.html` en un navegador web moderno. También puedes abrir `secuencia_pantallas_whatsapp.html` directamente.
 
-La versión publicada está disponible en [GitHub Pages](https://edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2006/).
+[Sketches GitHub Pages](https://edwinhdzcm.github.io/Practicas_Integradora_230425/Practica%2006/).
 
 ## Correspondencia con el prompt
 
