@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Secuencia de pantallas por rol - WhatsApp</title>
+<title>WhatsApp Business - Sketches por rol</title>
 <style>
   :root {
     --bg: #ffffff;
@@ -24,7 +24,6 @@
   .notch { background: #d8e2dc; }
   .el-btn.danger { border-color: #efc3bf; }
   .el-bubble.me { background: #dcf8c6; color: #202c33; }
-  header .brand path { fill: #075e54; }
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
   body {
@@ -192,42 +191,103 @@
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
   }
-</style>
+  body { background: radial-gradient(ellipse at 50% 30%, #0d4933 0, #082f22 52%, #06271c 100%); color:#e8f4ec; min-height:100vh; }
+  .workspace { max-width:1440px; margin:auto; padding:18px 34px 44px; }
+  .topbar { display:flex; align-items:center; gap:24px; min-height:66px; padding:10px 18px; border:1px solid #286143; border-radius:14px; background:#0b3929; box-shadow:0 12px 35px #03190f55; }
+  .brandline { display:flex; align-items:center; gap:10px; min-width:260px; }
+  .brand-copy { display:flex; flex-direction:column; line-height:1.2; letter-spacing:.09em; font-size:.76rem; color:#a8c9b3; }
+  .brand-copy strong { color:#e9f5ed; font-size:.94rem; letter-spacing:.01em; }
+  .role-switch { display:flex; gap:8px; margin:auto; }
+  .role-btn { padding:11px 24px; border:1px solid #34714d; border-radius:8px; background:#12432f; color:#c2d8c9; font:inherit; cursor:pointer; }
+  .role-btn.selected { background:#071e16; color:white; box-shadow:inset 0 -2px #25d366; }
+  .top-status,.eyebrow,.panel-title,.preview-label { font:600 .72rem/1.4 Consolas,monospace; letter-spacing:.13em; color:#8daf98; }
+  .intro { text-align:center; padding:24px 10px 22px; }
+  .intro h1 { margin:5px 0; font-size:1.8rem; }
+  .intro p:last-child { color:#a6c3ae; margin:6px 0; }
+  .studio { display:grid; grid-template-columns:minmax(245px,300px) minmax(290px,1fr) minmax(245px,300px); gap:26px; align-items:start; }
+  .panel { background:#103d2c; border:1px solid #286143; border-radius:12px; padding:18px; box-shadow:0 12px 30px #03180f40; }
+  .panel-title { display:flex; justify-content:space-between; border-bottom:1px solid #28583e; padding-bottom:10px; }
+  .panel h2 { margin:12px 0; font-size:1.05rem; }
+  #screen-list { display:grid; gap:4px; }
+  .screen-link { display:flex; align-items:center; gap:12px; width:100%; padding:9px 10px; text-align:left; border:1px solid transparent; border-radius:7px; background:transparent; color:#bfd4c6; font:inherit; font-size:.86rem; cursor:pointer; }
+  .screen-link:hover,.screen-link.active { background:#1b5638; border-color:#438658; color:white; }
+  .screen-link b { color:#67bc7b; font:600 .75rem Consolas,monospace; }
+  .preview-area { display:flex; flex-direction:column; align-items:center; min-height:550px; }
+  .preview-label { width:min(100%,300px); display:flex; justify-content:space-between; margin:2px 0 10px; }
+  #phone-preview { width:300px; }
+  #phone-preview .phone { width:300px; height:590px; border:7px solid #101916; border-radius:36px; padding:18px 16px 14px; box-shadow:0 18px 45px #020f0b99; cursor:default; overflow-y:auto; scrollbar-width:thin; }
+  #phone-preview .phone:hover { transform:none; }
+  #phone-preview .p-title { padding:8px 0 11px; font-size:1rem; }
+  #phone-preview .el-h { font-size:.9rem; }
+  #phone-preview .el-text { font-size:.8rem; }
+  #phone-preview .el-row { font-size:.8rem; padding:5px 0; }
+  #phone-preview .el-h { padding-top:5px; }
+  #phone-preview .el-row .rt small { font-size:.68rem; }
+  #phone-preview .el-btn { padding:9px 7px; font-size:.78rem; }
+  #phone-preview .el-input { font-size:.78rem; }
+  #phone-preview .notch { height:10px; background:#111; }
+  #screen-info { display:grid; gap:8px; }
+  .info-destination { padding:11px 12px; border:1px solid #356b4c; border-radius:7px; background:#164a33; color:#d5e7da; font-size:.84rem; }
+  button.info-destination { width:100%; text-align:left; cursor:pointer; font:inherit; }
+  button.info-destination:hover { border-color:#25d366; background:#1b5638; }
+  .info-destination strong { display:block; color:#f0f8f2; margin-bottom:3px; }
+  .info-rule { border-top:1px solid #2b5a40; margin:17px 0 12px; }
+  .legend-item { display:flex; gap:8px; align-items:center; color:#9ebba7; font-size:.78rem; }
+  .legend-item span { width:10px; height:10px; background:#25d366; border-radius:3px; }
+  .screen-meta { color:#8daf98; font: .75rem Consolas,monospace; }
+  .phone.static { color:var(--text); }
+  :root {
+    --bg:#080b0d; --surface:#11181c; --phone:#0b141a; --block:#202c33;
+    --field:#182229; --line:#2a3942; --text:#e9edef; --muted:#aebac1;
+    --accent:#25d366; --accent-ink:#062f1b; --accent-soft:#153a28;
+    --danger:#ff6b6b; color-scheme:dark;
+  }
+  body { background:#080b0d; color:#e9edef; }
+  .topbar { background:#11181c; border-color:#26362d; }
+  .panel { background:#11181c; border-color:#26362d; }
+  .role-btn { background:#182229; border-color:#30413a; color:#c7d2d8; }
+  .role-btn.selected { background:#080b0d; color:#f4fff7; box-shadow:inset 0 -2px #25d366; }
+  .screen-link:hover,.screen-link.active { background:#153a28; border-color:#25d366; color:#f4fff7; }
+  .info-destination { background:#17221d; border-color:#2b4937; color:#d1ddd5; }
+  .info-destination strong { color:#f0f7f2; }
+  #phone-preview .phone { background:#0b141a; border-color:#050809; }
+  #phone-preview .notch { background:#050809; }
+  #phone-preview .p-title { border-color:#26343b; }
+  #phone-preview .el-btn { background:#25d366; color:#062f1b; }
+  #phone-preview .el-btn.ghost { background:transparent; border-color:#3a4a52; color:#e9edef; }
+  #phone-preview .el-btn.danger { background:transparent; border-color:#7f3838; color:#ff8b8b; }
+  #phone-preview .el-input,#phone-preview .el-inputbar { background:#182229; border-color:#30414a; color:#c8d2d7; }
+  #phone-preview .el-row { border-color:#26343b; }
+  #phone-preview .el-row .av,#phone-preview .el-avatar { background:#26343b; }
+  #phone-preview .el-bubble { background:#202c33; color:#e9edef; }
+  #phone-preview .el-bubble.me { background:#005c4b; color:#e9edef; }
+  #phone-preview .el-grid div,#phone-preview .el-chips span { background:#202c33; color:#e9edef; }
+  #phone-preview .el-fab { background:#25d366; color:#062f1b; }
+  #phone-preview .el-toggle,.el-row { border-color:#26343b; }
+  .preview-label,.top-status,.eyebrow,.panel-title { color:#7fae8c; }
+  @media(max-width:900px) { .workspace{padding:12px}.studio{grid-template-columns:240px 1fr}.info-panel{grid-column:1/-1}.topbar{flex-wrap:wrap}.brandline{min-width:unset} }
+  @media(max-width:620px) { .studio{grid-template-columns:1fr}.screen-panel{order:2}.preview-area{order:1}.info-panel{order:3}.top-status{display:none}.role-btn{padding:9px 12px}.preview-area{min-height:unset} }</style>
 </head>
 <body>
-<main class="page">
-  <header>
-    <div class="brand">
-      <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
-        <circle cx="23" cy="23" r="23" fill="#25d366"/>
-        <path d="M23 12c-6.1 0-11 4.5-11 10 0 2.4.9 4.600 2.500 6.300L13.500 34l5.800-2c1.100.3 2.400.5 3.700.5 6.100 0 11-4.500 11-10S29.100 12 23 12z" fill="#06210f"/>
-      </svg>
-      <h1>Secuencia de pantallas por rol</h1>
+<main class="workspace">
+  <header class="topbar">
+    <div class="brandline">
+      <span class="logo-wrap"><svg width="34" height="34" viewBox="0 0 48 48" aria-label="WhatsApp"><circle cx="24" cy="24" r="23" fill="#25d366"/><path d="M12 36l2.1-7.4A14 14 0 1 1 19 33.8L12 36z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M19 17.5c-.6 0-1.1.5-1.4 1.1-.4.8-.6 1.8.1 3.2 1 2.2 3.5 4.9 6 6.1 1.8.9 3 .8 3.8.3.6-.4 1-1.2 1.1-1.8.1-.3-.1-.6-.4-.8l-2.3-1.1c-.3-.1-.6-.1-.8.2l-.8 1c-.2.2-.4.3-.7.2-1.4-.5-3.5-2.3-4.2-3.6-.1-.3-.1-.5.1-.7l.8-.9c.2-.2.2-.5.1-.8l-1-2.1c-.1-.3-.3-.3-.4-.3z" fill="#fff"/></svg></span>
+      <div class="brand-copy"><strong>WhatsApp Business</strong><span>SKETCHES</span></div>
     </div>
-    <p class="lede">Recorridos del administrador y del miembro de un grupo de WhatsApp, basados en el comportamiento público de la app. Wireframes propios de baja fidelidad; sin marcas gráficas, imágenes ni capturas oficiales.</p>
-    <p class="academic">Ejercicio académico, no afiliado a WhatsApp.</p>
-    <div class="roles" role="group" aria-label="Mostrar u ocultar carriles por rol">
-      <button class="role-btn" type="button" data-lane="admin" aria-pressed="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg>
-        Administrador
-      </button>
-      <button class="role-btn" type="button" data-lane="member" aria-pressed="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7"/></svg>
-        Miembro
-      </button>
+    <div class="role-switch" role="group" aria-label="Seleccionar rol">
+      <button class="role-btn" type="button" data-role="member">Rol de usuario</button>
+      <button class="role-btn selected" type="button" data-role="admin">Administrador Business</button>
     </div>
-    <p class="hint">Haz clic o usa el teclado (Tab y Enter) para abrir el detalle de cada pantalla. Dentro del detalle, las flechas del teclado cambian de pantalla. Usa los botones para mostrar u ocultar un rol. En pantallas pequeñas, desliza horizontalmente por cada carril.</p>
+    <span class="top-status">PRÁCTICA 06</span>
   </header>
-
-  <section id="lanes" aria-label="Carriles de pantallas"></section>
-
-  <section class="alt" aria-labelledby="alt-title">
-    <h2 id="alt-title">Estados alternos fuera del flujo principal</h2>
-    <div class="alt-grid" id="alt"></div>
-  </section>
-</main>
-
-<dialog id="detail" aria-labelledby="d-title">
+  <div class="intro"><p class="eyebrow">WHATSAPP BUSINESS · PROTOTIPO INTERACTIVO</p><h1>Explora las pantallas por rol</h1><p>Selecciona una pantalla para verla en el teléfono. La pantalla principal aparece seleccionada al abrir.</p></div>
+  <div class="studio">
+    <aside class="panel screen-panel"><div class="panel-title"><span>RECORRIDO</span><span id="screen-count"></span></div><h2 id="role-heading">Administrador</h2><nav id="screen-list" aria-label="Pantallas del recorrido"></nav></aside>
+    <section class="preview-area" aria-label="Vista previa del sketch"><div class="preview-label"><span id="screen-kicker">PANTALLA PRINCIPAL</span><span>390 × 844</span></div><div id="phone-preview"></div></section>
+    <aside class="panel info-panel"><h2>Desde aquí puedes ir a:</h2><div id="screen-info"></div><div class="info-rule"></div><div class="legend-item"><span></span>Herramientas de administración</div><p class="screen-meta" id="screen-meta"></p></aside>
+  </div>
+</main><dialog id="detail" aria-labelledby="d-title">
   <div class="d-head">
     <span class="d-num" id="d-num"></span>
     <div>
@@ -286,63 +346,46 @@ const LANES = [
   },
   {
     id: 'admin',
-    name: 'Administrador de grupo',
-    sub: 'Desde Chats toca + y crea un grupo',
-    legend: 'Las opciones con borde verde solo las ve el administrador.',
+    name: 'Administrador de WhatsApp Business',
+    sub: 'Herramientas para gestionar el negocio',
+    legend: 'Accesos de administración disponibles para la cuenta del negocio.',
     screens: [
-      { n: 1, title: 'Nuevo grupo', cap: 'Seleccionar participantes', go: 'Toca la flecha',
-        body: [{t:'input',x:'Buscar contactos'},{t:'chips',x:['Ana ✕','Luis ✕']},{t:'row',x:'Ana Pérez',check:1},{t:'row',x:'Luis Gómez',check:1},{t:'row',x:'Marta Ruiz',check:0},{t:'row',x:'Carlos Díaz',check:0},{t:'fab',x:'→'}],
-        foot: '2 contactos seleccionados',
-        what: 'Después de tocar + y elegir Nuevo grupo, se marcan los contactos que entrarán al grupo. Los seleccionados aparecen arriba como etiquetas.',
-        actions: ['Buscar un contacto', 'Marcar o desmarcar contactos', 'Tocar la flecha para continuar'],
-        next: 'Nombre y foto del grupo' },
-      { n: 2, title: 'Nuevo grupo', cap: 'Nombre y foto', go: 'Toca Crear grupo',
-        body: [{t:'avatar'},{t:'input',x:'Nombre del grupo'},{t:'text',x:'Participantes: 2'},{t:'chips',x:['Ana','Luis']},{t:'spacer'},{t:'btn',x:'Crear grupo'}],
-        foot: 'La foto es opcional',
-        what: 'Se escribe el nombre del grupo y, si se desea, se elige una foto. Abajo se confirma la lista de participantes.',
-        actions: ['Escribir el nombre del grupo', 'Elegir una foto', 'Crear el grupo'],
-        next: 'Chat del grupo',
-        note: 'Quien crea el grupo queda como administrador automáticamente.' },
-      { n: 3, title: 'Grupo nuevo', cap: 'Chat del grupo', go: 'Toca el nombre del grupo',
-        body: [{t:'sys',x:'Creaste el grupo'},{t:'bubble',x:'Bienvenidos',me:1},{t:'bubble',x:'¡Gracias!'},{t:'inputbar',x:'Escribe un mensaje'}],
-        foot: 'Toca el nombre para ver la info',
-        what: 'El chat del grupo recién creado. Se ve el aviso de creación y la barra para escribir mensajes.',
-        actions: ['Escribir y enviar mensajes', 'Tocar el nombre del grupo para abrir su información'],
-        next: 'Info del grupo' },
-      { n: 4, title: 'Info del grupo', cap: 'Info del grupo', go: 'Toca Ajustes del grupo',
-        body: [{t:'avatar',sm:1},{t:'text',x:'Grupo nuevo',c:1},{t:'row',x:'Agregar participantes',adm:1},{t:'h',x:'3 participantes'},{t:'row',x:'Tú',tag:'Admin'},{t:'row',x:'Ana Pérez',s:'Toca: hacer admin o quitar',adm:1},{t:'row',x:'Luis Gómez'}],
-        foot: 'Ajustes del grupo ›',
-        what: 'Información del grupo con la lista de participantes. El administrador puede sumar gente, nombrar otros administradores o quitar participantes.',
-        actions: ['Agregar participantes', 'Tocar un participante para hacerlo administrador o quitarlo del grupo', 'Abrir los ajustes del grupo'],
-        next: 'Ajustes del grupo',
-        note: 'Agregar, promover y quitar participantes son acciones exclusivas del administrador.' },
-      { n: 5, title: 'Ajustes del grupo', cap: 'Ajustes del grupo', go: 'Toca Invitar por enlace',
-        body: [{t:'toggle',x:'Editar info del grupo',s:'Solo administradores',on:1,adm:1},{t:'toggle',x:'Enviar mensajes',s:'Todos los participantes',on:1,adm:1},{t:'toggle',x:'Aprobar nuevos participantes',s:'Desactivado',on:0,adm:1},{t:'row',x:'Invitar por enlace',s:'Para sumar a más personas',adm:1}],
-        foot: 'Solo los administradores cambian esto',
-        what: 'Define quién puede editar la información del grupo, quién puede enviar mensajes y si hay que aprobar a quienes piden entrar.',
-        actions: ['Elegir quién edita la info del grupo', 'Elegir quién envía mensajes', 'Activar o desactivar la aprobación de nuevos participantes', 'Abrir Invitar por enlace'],
-        next: 'Invitar por enlace',
-        note: 'Los miembros solo pueden ver estos ajustes, no cambiarlos.' },
-      { n: 6, title: 'Invitar por enlace', cap: 'Enlace de invitación', go: 'Vuelve a Info del grupo',
-        body: [{t:'h',x:'Enlace del grupo'},{t:'input',x:'enlace.ejemplo/abc123'},{t:'btn',x:'Copiar enlace'},{t:'btn',x:'Compartir enlace',k:'ghost'},{t:'btn',x:'Restablecer enlace',k:'ghost',adm:1},{t:'spacer'},{t:'text',x:'Quien tenga el enlace puede pedir entrar al grupo.'}],
-        foot: '',
-        what: 'Muestra el enlace del grupo para copiarlo o compartirlo. Restablecerlo invalida el enlace anterior.',
-        actions: ['Copiar el enlace', 'Compartir el enlace', 'Restablecer el enlace'],
-        next: 'Regresa a Info del grupo',
-        note: 'Restablecer el enlace es exclusivo del administrador.' },
-      { n: 7, title: 'Salir o eliminar', cap: 'Salir o eliminar el grupo',
-        body: [{t:'h',x:'Salir del grupo'},{t:'text',x:'Si eres el único administrador, elige a otra persona antes de salir.'},{t:'btn',x:'Salir del grupo',k:'danger'},{t:'btn',x:'Eliminar grupo',k:'danger',adm:1},{t:'spacer'},{t:'btn',x:'Cancelar',k:'ghost'}],
-        foot: '',
-        what: 'Confirmación para abandonar el grupo o eliminarlo por completo.',
-        actions: ['Salir del grupo', 'Eliminar el grupo', 'Cancelar'],
-        next: 'Fin del recorrido del administrador',
-        note: 'Para eliminar el grupo, el administrador primero quita a los demás participantes.' }
+      { n: 1, title: 'Business', cap: 'Panel de negocio', go: 'Toca Herramientas',
+        body: [{t:'h',x:'Administrar negocio'},{t:'text',x:'Conecta con tus clientes y organiza tu actividad.'},{t:'btn',x:'Perfil de empresa',adm:1},{t:'btn',x:'Catálogo',adm:1},{t:'btn',x:'Pedidos',adm:1},{t:'btn',x:'Estadísticas',adm:1},{t:'btn',x:'Herramientas de mensajes',adm:1}],
+        foot: 'Cuenta de empresa',
+        what: 'Panel principal con accesos a las herramientas de WhatsApp Business para administrar la presencia y la comunicación del negocio.',
+        actions: ['Editar el perfil de empresa', 'Administrar catálogo y pedidos', 'Consultar estadísticas', 'Configurar herramientas de mensajes'],
+        next: 'Perfil de empresa' },
+      { n: 2, title: 'Perfil de empresa', cap: 'Editar perfil', go: 'Toca Guardar',
+        body: [{t:'avatar'},{t:'input',x:'Nombre del negocio'},{t:'input',x:'Descripción'},{t:'row',x:'Categoría',s:'Tienda de ropa',adm:1},{t:'row',x:'Horario',s:'Abierto · 9:00 a 18:00',adm:1},{t:'row',x:'Dirección y contacto',adm:1},{t:'btn',x:'Guardar cambios'}],
+        foot: 'Información visible a clientes',
+        what: 'Edición de los datos públicos del negocio que las personas pueden consultar desde el perfil.',
+        actions: ['Cambiar foto y nombre', 'Editar descripción y categoría', 'Configurar horario, dirección y contacto', 'Guardar cambios'],
+        next: 'Catálogo' },
+      { n: 3, title: 'Catálogo', cap: 'Productos y servicios', go: 'Toca Agregar',
+        body: [{t:'h',x:'Catálogo del negocio'},{t:'row',x:'Bolso artesanal',s:' · Disponible',adm:1},{t:'row',x:'Cartera de piel',s:' · Disponible',adm:1},{t:'row',x:'Envío local',s:'Servicio',adm:1},{t:'spacer'},{t:'btn',x:'+ Agregar artículo'},{t:'text',x:'Comparte artículos en tus conversaciones.'}],
+        foot: '3 artículos',
+        what: 'Lista de productos y servicios que el negocio comparte con sus clientes desde el chat.',
+        actions: ['Consultar artículos', 'Agregar un producto o servicio', 'Actualizar precio y disponibilidad'],
+        next: 'Herramientas de mensajes' },
+      { n: 4, title: 'Herramientas de mensajes', cap: 'Mensajes y etiquetas', go: 'Toca Respuesta rápida',
+        body: [{t:'h',x:'Organiza tus conversaciones'},{t:'row',x:'Mensaje de bienvenida',s:'Saluda a clientes nuevos',adm:1},{t:'row',x:'Mensaje de ausencia',s:'Responde fuera del horario',adm:1},{t:'row',x:'Respuestas rápidas',s:'Atajos para preguntas frecuentes',adm:1},{t:'row',x:'Etiquetas',s:'Organiza chats y pedidos',adm:1}],
+        foot: 'Automatiza tareas frecuentes',
+        what: 'Ajustes para responder con rapidez y mantener ordenadas las conversaciones con clientes.',
+        actions: ['Configurar mensaje de bienvenida', 'Definir mensaje de ausencia', 'Crear respuestas rápidas', 'Organizar chats con etiquetas'],
+        next: 'Estadísticas' },
+      { n: 5, title: 'Estadísticas', cap: 'Actividad del negocio', go: 'Toca volver al panel',
+        body: [{t:'h',x:'Resumen de actividad'},{t:'row',x:'Mensajes enviados',s:'128',adm:1},{t:'row',x:'Mensajes entregados',s:'116',adm:1},{t:'row',x:'Mensajes leídos',s:'94',adm:1},{t:'row',x:'Conversaciones nuevas',s:'23 esta semana',adm:1},{t:'text',x:'Datos ilustrativos del prototipo.'}],
+        foot: 'Últimos 7 días',
+        what: 'Resumen visual de métricas para ayudar a entender la interacción con clientes.',
+        actions: ['Revisar mensajes enviados, entregados y leídos', 'Consultar conversaciones nuevas'],
+        next: 'Fin del recorrido de administración' }
     ]
   },
   {
     id: 'member',
-    name: 'Miembro del grupo',
-    sub: 'Desde Chats abre un grupo existente',
+    name: 'Rol de usuario',
+    sub: 'Uso diario de WhatsApp',
     screens: [
       { n: 1, title: 'Grupo de la clase', cap: 'Chat del grupo', go: 'Toca el clip',
         body: [{t:'bubble',x:'¿Quién lleva el material?'},{t:'bubble',x:'Yo lo llevo',me:1},{t:'bubble',x:'Perfecto'},{t:'inputbar',x:'Escribe un mensaje'}],
@@ -380,7 +423,43 @@ const LANES = [
         foot: '',
         what: 'Opciones para abandonar el grupo o reportarlo si incumple las normas.',
         actions: ['Salir del grupo', 'Reportar el grupo', 'Cancelar'],
-        next: 'Fin del recorrido del miembro' }
+        next: 'Fin del recorrido del miembro' },
+      { n: 7, title: 'Nuevo chat', cap: 'Nuevo chat', go: 'Elige una opción',
+        body: [{t:'input',x:'Nombre, número o @nombre de usuario'},{t:'btn',x:'Nuevo grupo',k:'ghost'},{t:'btn',x:'Nuevo contacto',k:'ghost'},{t:'btn',x:'Nueva comunidad',k:'ghost'},{t:'btn',x:'Nueva difusión',k:'ghost'},{t:'h',x:'Contactos frecuentes'},{t:'text',x:'Los contactos de tu teléfono aparecerán aquí.'}],
+        foot: 'Busca por nombre o número',
+        what: 'Menú para iniciar un chat y crear un grupo, contacto, comunidad o difusión. No incluye contactos de ejemplo.',
+        actions: ['Buscar por nombre, número o usuario', 'Crear un grupo', 'Abrir Nuevo contacto', 'Crear comunidad o difusión'],
+        next: 'Novedades' },
+      { n: 8, title: 'Novedades', cap: 'Novedades y estados', go: 'Toca Chats para volver',
+        body: [{t:'h',x:'Estados'},{t:'row',x:'Añadir estado',s:'Desaparece después de 24 horas'},{t:'h',x:'Actualizaciones vistas'},{t:'text',x:'Los estados de tus contactos aparecerán aquí.'},{t:'spacer'},{t:'btn',x:'Compartir actualización',k:'ghost'}],
+        foot: 'Actualizaciones de tus contactos',
+        what: 'Sección de estados para compartir una actualización y consultar las publicaciones de contactos.',
+        actions: ['Añadir un estado con texto o foto', 'Consultar actualizaciones de contactos'],
+        next: 'Comunidades' },
+      { n: 9, title: 'Comunidades', cap: 'Comunidades', go: 'Toca Nueva comunidad',
+        body: [{t:'h',x:'Comunidades'},{t:'avatar'},{t:'h',x:'Usa una comunidad para mantenerte en contacto'},{t:'text',x:'Las comunidades reúnen grupos por temas. Las comunidades a las que te añadan aparecerán aquí.'},{t:'spacer'},{t:'btn',x:'Ver ejemplos de comunidades',k:'ghost'},{t:'btn',x:'+ Nueva comunidad'}],
+        foot: 'Novedades · Llamadas · Chats · Tú',
+        what: 'Vista vacía de Comunidades con una explicación breve y una acción para crear una comunidad.',
+        actions: ['Consultar ejemplos', 'Crear una comunidad', 'Cambiar a otra pestaña'],
+        next: 'Llamadas' },
+      { n: 10, title: 'Llamadas', cap: 'Llamadas', go: 'Toca Chats para volver',
+        body: [{t:'h',x:'Llamadas'},{t:'grid',x:['Llamar','Programar','Teclado','Favoritos']},{t:'h',x:'Recientes'},{t:'text',x:'Aquí aparecerán tus llamadas recientes.'},{t:'row',x:'Llamada entrante',s:'Reciente'},{t:'row',x:'Llamada saliente',s:'Reciente'}],
+        foot: 'Novedades · Comunidades · Chats · Tú',
+        what: 'Historial de llamadas con accesos para llamar, programar, abrir el teclado y consultar favoritos. Los registros son genéricos.',
+        actions: ['Iniciar una llamada', 'Programar una llamada', 'Abrir el teclado', 'Consultar llamadas recientes'],
+        next: 'Configuración' },
+      { n: 11, title: 'Configuración', cap: 'Configuración', go: 'Desplázate para ver más ajustes',
+        body: [{t:'h',x:'Tu perfil'},{t:'row',x:'Suscripciones'},{t:'row',x:'Listas'},{t:'row',x:'Mensajes de difusión'},{t:'row',x:'Destacados'},{t:'row',x:'Dispositivos vinculados'},{t:'h',x:'Cuenta y preferencias'},{t:'row',x:'Cuenta'},{t:'row',x:'Privacidad'},{t:'row',x:'Chats'},{t:'row',x:'Apariencia'},{t:'row',x:'Notificaciones'},{t:'row',x:'Almacenamiento y datos'},{t:'row',x:'Controles parentales'},{t:'h',x:'Ayuda y comunidad'},{t:'row',x:'Ayuda y comentarios'},{t:'row',x:'Invitar amigos'},{t:'row',x:'Centro de cuentas'},{t:'h',x:'También de Meta'},{t:'row',x:'Instagram · Facebook · Threads · Meta AI'}],
+        foot: 'Desliza para recorrer todos los ajustes',
+        what: 'Una sola pantalla larga y desplazable que reúne las secciones mostradas en las dos capturas de Configuración: opciones de cuenta, chats, avisos, ayuda y servicios de Meta.',
+        actions: ['Desplazarse por la lista de ajustes', 'Abrir opciones de cuenta, privacidad y chats', 'Consultar ayuda y servicios vinculados'],
+        next: 'Cerrar sesión' },
+      { n: 12, title: 'Cerrar sesión', cap: 'Cerrar sesión',
+        body: [{t:'h',x:'¿Quieres cerrar sesión?'},{t:'text',x:'Podrás volver a entrar con tu número de teléfono.'},{t:'spacer'},{t:'btn',x:'Cerrar sesión',k:'danger'},{t:'btn',x:'Cancelar',k:'ghost'}],
+        foot: 'La cuenta no se elimina',
+        what: 'Confirmación para cerrar la sesión de WhatsApp en este dispositivo.',
+        actions: ['Confirmar el cierre de sesión', 'Cancelar y volver a configuración'],
+        next: 'Fin del recorrido del usuario' }
     ]
   }
 ];
@@ -456,92 +535,35 @@ function laneHTML(lane) {
 }
 
 const $ = s => document.querySelector(s);
-const lanesEl = $('#lanes');
-
-lanesEl.innerHTML = LANES.map((lane, idx) =>
-  laneHTML(lane) + (idx === 0 ? `<div class="divider"><span>${ARROW}Desde Chats, el flujo se separa según el rol</span></div>` : '')
-).join('');
-
-$('#alt').innerHTML = ALT.map(a =>
-  `<article class="alt-card"><span class="pill">${a.role}</span><h3>${a.title}</h3><p>${a.text}</p></article>`
-).join('');
-
-/* Mostrar u ocultar roles */
-const roleBtns = [...document.querySelectorAll('.role-btn')];
-roleBtns.forEach(b => b.addEventListener('click', () => {
-  const pressed = b.getAttribute('aria-pressed') === 'true';
-  const othersOn = roleBtns.some(o => o !== b && o.getAttribute('aria-pressed') === 'true');
-  if (pressed && !othersOn) return; // siempre queda un rol visible
-  b.setAttribute('aria-pressed', String(!pressed));
-  $('#lane-' + b.dataset.lane).hidden = pressed;
+let selected = { lane: 'admin', i: 0 };
+let activeRole = 'admin';
+const ROLE_LANES = { admin: ['admin'], member: ['common','member'] };
+const laneById = id => LANES.find(l => l.id === id);
+function visibleScreens() { return ROLE_LANES[activeRole].flatMap(id => laneById(id).screens.map((screen,i) => ({lane:laneById(id),screen,i}))); }
+function selectScreen(laneId,i) { selected={lane:laneId,i}; renderStudio(); }
+function renderStudio() {
+  const entries=visibleScreens();
+  const current=laneById(selected.lane).screens[selected.i];
+  const roleName=activeRole==='admin'?'Administrador Business':'Rol de usuario';
+  $('#role-heading').textContent=roleName;
+  $('#screen-count').textContent=`${entries.length} pantallas`;
+  $('#screen-kicker').textContent=current.cap.toUpperCase();
+  $('#screen-list').innerHTML=entries.map(({lane,screen,i},n)=>`<button type="button" class="screen-link${lane.id===selected.lane&&i===selected.i?' active':''}" data-lane="${lane.id}" data-i="${i}"><b>E${String(n+1).padStart(2,'0')}</b><span>${screen.cap}</span></button>`).join('');
+  $('#phone-preview').innerHTML=phoneHTML(current,selected.lane,selected.i,true);
+  const destinations=current.actions.slice(0,3).map((action,n)=>`<div class="info-destination"><strong>${action}</strong>${n===0?'Acceso disponible desde esta pantalla.':'Selecciona esta opción para continuar.'}</div>`).join('');
+  const nextEntry=entries.find(({screen})=>screen.cap===current.next||screen.title===current.next);
+  const nextLink=nextEntry?`<button type="button" class="info-destination" data-next-lane="${nextEntry.lane.id}" data-next-i="${nextEntry.i}"><strong>Siguiente pantalla</strong>${current.next}</button>`:'';
+  $('#screen-info').innerHTML=(destinations||`<div class="info-destination">${current.next}</div>`)+nextLink;
+  $('#screen-meta').textContent=`${entries.length} pantallas · Rol ${roleName}`;
+  document.querySelectorAll('.role-btn').forEach(button=>button.classList.toggle('selected',button.dataset.role===activeRole));
+}
+$('#screen-list').addEventListener('click',event=>{const button=event.target.closest('.screen-link');if(button)selectScreen(button.dataset.lane,Number(button.dataset.i));});
+$('#screen-info').addEventListener('click',event=>{const button=event.target.closest('[data-next-lane]');if(button)selectScreen(button.dataset.nextLane,Number(button.dataset.nextI));});
+document.querySelectorAll('.role-btn').forEach(button=>button.addEventListener('click',()=>{
+  activeRole=button.dataset.role;
+  selected=activeRole==='admin'?{lane:'admin',i:0}:{lane:'common',i:0};
+  renderStudio();
 }));
-
-/* Detalle de pantalla */
-const dlg = $('#detail');
-let cur = { lane: null, i: 0 };
-
-function currentLane() { return LANES.find(l => l.id === cur.lane); }
-function phoneEl() { return document.querySelector(`.phone[data-lane="${cur.lane}"][data-i="${cur.i}"]`); }
-
-function renderDetail() {
-  const lane = currentLane();
-  const s = lane.screens[cur.i];
-  $('#d-num').textContent = s.n;
-  $('#d-title').textContent = s.cap;
-  $('#d-role').textContent = lane.name;
-  $('#d-preview').innerHTML = phoneHTML(s, lane.id, cur.i, true);
-  $('#d-body').innerHTML =
-    `<h3>Qué se ve en esta pantalla</h3><p>${s.what}</p>` +
-    `<h3>Qué puede hacer la persona</h3><ul>${s.actions.map(a => `<li>${a}</li>`).join('')}</ul>` +
-    `<h3>Lleva a</h3><p>${s.next}</p>` +
-    (s.note ? `<div class="d-note">${s.note}</div>` : '');
-  $('#d-pos').textContent = `Pantalla ${s.n} de ${lane.screens.length}`;
-  $('#d-prev').disabled = cur.i === 0;
-  $('#d-next').disabled = cur.i === lane.screens.length - 1;
-  document.querySelectorAll('.phone.active').forEach(p => p.classList.remove('active'));
-  const p = phoneEl();
-  if (p) { p.classList.add('active'); p.scrollIntoView({ inline: 'center', block: 'nearest' }); }
-}
-
-function openDetail(laneId, i) {
-  cur = { lane: laneId, i };
-  renderDetail();
-  if (!dlg.open) dlg.showModal();
-}
-
-function step(d) {
-  const n = currentLane().screens.length;
-  const next = cur.i + d;
-  if (next < 0 || next >= n) return;
-  cur.i = next;
-  renderDetail();
-}
-
-lanesEl.addEventListener('click', e => {
-  const p = e.target.closest('.phone');
-  if (p) openDetail(p.dataset.lane, Number(p.dataset.i));
-});
-lanesEl.addEventListener('keydown', e => {
-  const p = e.target.closest('.phone');
-  if (p && (e.key === 'Enter' || e.key === ' ')) {
-    e.preventDefault();
-    openDetail(p.dataset.lane, Number(p.dataset.i));
-  }
-});
-
-$('#d-prev').addEventListener('click', () => step(-1));
-$('#d-next').addEventListener('click', () => step(1));
-$('#d-close').addEventListener('click', () => dlg.close());
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-dlg.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
-  if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
-});
-dlg.addEventListener('close', () => {
-  const p = phoneEl();
-  document.querySelectorAll('.phone.active').forEach(x => x.classList.remove('active'));
-  if (p) p.focus();
-});
-</script>
+renderStudio();</script>
 </body>
 </html>
